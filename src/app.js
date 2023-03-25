@@ -15,15 +15,10 @@ app.use(helmet());
 app.use(cors());
 
 // import routers
-const employeesRouter = require('./routers/employees-router');
 const protectedRouter = require('./routers/protected-router');
 
 // set up routes
 const routes = [
-  {
-    url: '/employees',
-    router: employeesRouter,
-  },
   {
     url: '/protected',
     router: protectedRouter,

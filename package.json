@@ -5,9 +5,6 @@
   "main": "src/server.js",
   "scripts": {
     "test": "mocha --require test/setup.js --watch",
-    "migrate": "postgrator --config postgrator-config.js",
-    "migrate:test": "env NODE_ENV=test npm run migrate",
-    "migrate:production": "env SSL=true DATABASE_URL=$(heroku config:get DATABASE_URL) npm run migrate",
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
     "predeploy": "npm audit && npm run migrate:production",
@@ -18,8 +15,11 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.3",
     "helmet": "^3.22.0",
+    "jsonwebtoken": "^9.0.0",
     "knex": "^0.20.13",
     "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.2.0",
     "pg": "^7.18.2",
     "xss": "^1.0.6"
   },

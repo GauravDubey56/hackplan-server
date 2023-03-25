@@ -11,16 +11,20 @@
     "deploy": "git push heroku master"
   },
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.3",
     "helmet": "^3.22.0",
+    "joi": "^17.9.1",
     "jsonwebtoken": "^9.0.0",
     "knex": "^0.20.13",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.2.0",
     "pg": "^7.18.2",
+    "uuid": "^9.0.0",
     "xss": "^1.0.6"
   },
   "devDependencies": {

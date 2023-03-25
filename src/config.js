@@ -10,6 +10,7 @@ const {
   DB_PASS,
   DB_USER,
   DB_DRIVER,
+  JWT_SECRET
 } = process.env;
 
 module.exports = {
@@ -18,6 +19,7 @@ module.exports = {
   DATABASE_URL,
   TEST_DATABASE_URL,
   API_TOKEN,
+  JWT_SECRET,
   dbConfig: {
     DEVELOPMENT: {
       DB_DRIVER,

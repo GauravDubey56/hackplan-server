@@ -22,45 +22,26 @@ app.use(
 
 global.validator = require("./middleware/joi-validator");
 // import routers
-const protectedRouter = require("./routers/protected-router");
-const authRouter = require("./routers/auth-router");
-// set up routes
-const routes = [
-  {
-    url: "/protected",
-    router: protectedRouter,
-  },
-  {
-    url: "/auth",
-    router: authRouter,
-  },
-];
-// add routes to app
-routes.forEach(({ url, router }) => {
-  app.use(`/api/${url}`, router);
-});
-
+require('./routers').map(ele => {
+  app.use(ele.url, ele.router);
+})
 // list endpoints by default
-app.get("/api", (req, res) => {
-  return res.status(200).json({
-    endpoints: routes.map((route) => route.url),
-  });
-});
+
 
 // error handling
 // eslint-disable-next-line no-unused-vars
-const errorHandler = (error, req, res) => {
-  let response;
-  if (NODE_ENV === "production") {
-    response = { error: { message: "Server error" } };
-  } else {
-    response = { message: error.message, error };
-  }
+// const errorHandler = (error, req, res, next) => {
+//   let response;
+//   if (NODE_ENV === "production") {
+//     response = { error: { message: "Server error" } };
+//   } else {
+//     response = { message: error.message, error };
+//   }
 
-  return res.status(500).json(response);
-};
+//   return res.status(500).json(response);
+// };
 
-app.use(errorHandler);
+// app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(

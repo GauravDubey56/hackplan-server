@@ -8,3 +8,5 @@ app.listen(PORT, () => {
     `Server listening in ${NODE_ENV} mode at http://localhost:${PORT}`
   );
 });
+
+module.exports = app;

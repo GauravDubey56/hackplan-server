@@ -35,11 +35,11 @@ const routes = [
 ];
 // add routes to app
 routes.forEach(({url, router}) => {
-  app.use(url, router);
+  app.use(`/api/${url}`, router);
 });
 
 // list endpoints by default
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   return res
     .status(200)
     .json({

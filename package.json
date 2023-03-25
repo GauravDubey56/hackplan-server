@@ -2,11 +2,11 @@
   "name": "express-knex-boilerplate",
   "version": "1.0.0",
   "description": "A starting point for Express apps with Knex and a PostgreSQL Database",
-  "main": "src/server.js",
+  "main": "api/index.js",
   "scripts": {
     "test": "mocha --require test/setup.js --watch",
-    "dev": "nodemon src",
-    "start": "node src",
+    "dev": "nodemon api",
+    "start": "node api",
     "predeploy": "npm audit && npm run migrate:production",
     "deploy": "git push heroku master"
   },
